@@ -7,7 +7,7 @@ Public Class frmEdit
 
     Dim threadU As Thread
     Public buildDate As String = "09/04/2018"
-    Dim curVer As Integer = 29
+    Dim curVer As Integer = 1
 
     'Avatar Offsets
     Dim C4 As String = "00"
@@ -3308,7 +3308,7 @@ Public Class frmEdit
     Private Function CheckForUpdate() As Integer
         Dim client As WebClientEx = New WebClientEx() With {.Timeout = 10000}
 
-        Dim reader As StreamReader = New StreamReader(client.OpenRead("https://raw.githubusercontent.com/qiangqiang101/Initial-D-Arcade-Stage-Teknoparrot-Launcher/master/ver/ver.txt"))
+        Dim reader As StreamReader = New StreamReader(client.OpenRead("https://raw.githubusercontent.com/qiangqiang101/Standalone-InitialD-AS-Card-Editor/master/ver/ver.txt"))
         Return reader.ReadToEnd
     End Function
 
