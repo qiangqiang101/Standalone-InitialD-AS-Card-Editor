@@ -1,0 +1,65 @@
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\bin\Release\InitialDLauncher.exe.config
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\bin\Release\InitialDLauncher.exe
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\bin\Release\InitialDLauncher.pdb
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\bin\Release\InitialDLauncher.xml
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.frmLauncher.resources
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.Resources.resources
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.frmSettings.resources
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.vbproj.GenerateResource.Cache
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.exe
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.xml
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.pdb
+e:\users\barry\documents\visual studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.vbprojResolveAssemblyReference.cache
+E:\Users\Barry\Documents\Visual Studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.Card.resources
+E:\Users\Barry\Documents\Visual Studio 2015\Projects\InitialDLauncher\InitialDLauncher\obj\Release\InitialDLauncher.frmCard.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\bin\Release\InitialDLauncher.exe.config
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.exe
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.xml
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.pdb
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\bin\Release\InitialDLauncher.exe
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\bin\Release\InitialDLauncher.pdb
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\bin\Release\InitialDLauncher.xml
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.vbprojResolveAssemblyReference.cache
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.Card.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.Form1.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmCard.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmLauncher.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.Resources.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmSettings.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.vbproj.GenerateResource.Cache
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmAbout.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmEdit.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmLeaderboard.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmLogin.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmSubmit.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.frmTimeAttack.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\obj\Release\InitialDLauncher.TimeAttack.resources
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\bin\Release\Thumbs.dll
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\bin\Release\Thumbs.pdb
+F:\Users\Bartholomew\Documents\GitHub\Initial-D-Arcade-Stage-Teknoparrot-Launcher\InitialDLauncher\bin\Release\Thumbs.xml
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\bin\Release\CardEditor.exe.config
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\InitialDLauncher.vbprojResolveAssemblyReference.cache
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.Form2.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.Card.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.Form1.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmAbout.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmCard.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmEdit.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmEditCar.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmLauncher.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmLeaderboard.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmLogin.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmSubmit.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmTimeAttack.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.Resources.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.frmSettings.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.TimeAttack.resources
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\InitialDLauncher.vbproj.GenerateResource.Cache
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.xml
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\bin\Release\CardEditor.exe
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\bin\Release\CardEditor.pdb
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\bin\Release\CardEditor.xml
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\bin\Release\Thumbs.dll
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\bin\Release\Thumbs2.dll
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.exe
+E:\Users\Barry\Documents\GitHub\Standalone-InitialD-AS-Card-Editor\InitialDLauncher\obj\Release\CardEditor.pdb
