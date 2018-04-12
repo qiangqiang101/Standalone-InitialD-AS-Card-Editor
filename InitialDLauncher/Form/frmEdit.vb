@@ -6,8 +6,9 @@ Imports Thumbs2
 Public Class frmEdit
 
     Dim threadU As Thread
-    Public buildDate As String = "09/04/2018"
-    Dim curVer As Integer = 1
+    Public buildDate As String = "13/04/2018"
+    Dim curVer As Integer = 2
+    Dim datafilled As Boolean = False
 
     'Avatar Offsets
     Dim C4 As String = "00"
@@ -82,15 +83,12 @@ Public Class frmEdit
                             _extension = "bin"
                         End If
                 End Select
+                If Not datafilled Then FillData()
                 AfterCardLoaded()
             End If
         Catch ex As Exception
             MsgBox(ex.Message & ex.StackTrace, MsgBoxStyle.Critical, "Error")
         End Try
-    End Sub
-
-    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-        cmHelp.Show(btnHelp, New Point(btnHelp.Location.X - 125, btnHelp.Location.Y - 10))
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
@@ -455,14 +453,6 @@ Public Class frmEdit
         End Try
     End Sub
 
-    Private Sub btnTool_Click(sender As Object, e As EventArgs) Handles btnTool.Click
-        cmTool.Show(btnTool, New Point(btnTool.Location.X - 70, btnTool.Location.Y - 10))
-    End Sub
-
-    Private Sub btnFile_Click(sender As Object, e As EventArgs) Handles btnFile.Click
-        cmFile.Show(btnFile, New Point(btnFile.Location.X - 10, btnFile.Location.Y - 10))
-    End Sub
-
     Private _version As Integer
 
     Public Property Version() As Integer
@@ -778,9 +768,9 @@ Public Class frmEdit
                 NsGroupBox1.SubTitle = "Edit the X marks on your card."
                 import_complete = "Car Import completed, Restart Card Editor to take effect."
                 error_5108_fixed = "Error fixed."
-                btnFile.Text = "File"
-                btnTool.Text = "Tools"
-                btnHelp.Text = "Help"
+                FileToolStripMenuItem.Text = "File"
+                ToolsToolStripMenuItem.Text = "Tools"
+                HelpToolStripMenuItem.Text = "Help"
                 OpenToolStripMenuItem.Text = "Open"
                 ExitToolStripMenuItem.Text = "Exit"
                 SettingsToolStripMenuItem.Text = "Setting"
@@ -875,9 +865,9 @@ Public Class frmEdit
                 NsGroupBox1.SubTitle = "修改卡內的ㄨ標記。"
                 import_complete = "導入完成，請重啟改卡視窗。"
                 error_5108_fixed = "修復完成。"
-                btnFile.Text = "文件"
-                btnTool.Text = "工具"
-                btnHelp.Text = "幫助"
+                FileToolStripMenuItem.Text = "文件"
+                ToolsToolStripMenuItem.Text = "工具"
+                HelpToolStripMenuItem.Text = "幫助"
                 OpenToolStripMenuItem.Text = "打開"
                 ExitToolStripMenuItem.Text = "離開"
                 SettingsToolStripMenuItem.Text = "設定"
@@ -972,9 +962,9 @@ Public Class frmEdit
                 NsGroupBox1.SubTitle = "Edit the X marks on your card."
                 import_complete = "Card Import completed, Restart Card Editor to take effect."
                 error_5108_fixed = "Erreur corrigée."
-                btnFile.Text = "File"
-                btnTool.Text = "Tools"
-                btnHelp.Text = "Help"
+                FileToolStripMenuItem.Text = "File"
+                ToolsToolStripMenuItem.Text = "Tools"
+                HelpToolStripMenuItem.Text = "Help"
                 OpenToolStripMenuItem.Text = "Open"
                 ExitToolStripMenuItem.Text = "Exit"
                 SettingsToolStripMenuItem.Text = "Setting"
@@ -3068,57 +3058,66 @@ Public Class frmEdit
         End If
     End Sub
 
+    Private Sub FillData()
+        Try
+            'Add Gender
+            sex.Add(male, "MALE")
+            sex.Add(female, "FEMALE")
+            cmbGender.DisplayMember = "Key"
+            cmbGender.ValueMember = "Value"
+            cmbGender.DataSource = New BindingSource(sex, Nothing)
+            If _extension = "bin" Then
+                If GetGender(GetHex(_filename, 90, 1)) = Gender.female Then
+                    cmbGender.SelectedIndex = 1
+                Else
+                    cmbGender.SelectedIndex = 0
+                End If
+            Else
+                If GetGender(GetHex(_filename, Neg60(90), 1)) = Gender.female Then
+                    cmbGender.SelectedIndex = 1
+                Else
+                    cmbGender.SelectedIndex = 0
+                End If
+            End If
+
+            If _version = 6 Then
+                DictionaryAdd6()
+            End If
+
+            If _version = 7 Then
+                DictionaryAdd7()
+
+                'Add Aura
+                aura.Add(a7_none, "NONE")
+                aura.Add(a7_hot, "HOT")
+                aura.Add(a7_wind, "WIND")
+                aura.Add(a7_light, "LIGHT")
+                aura.Add(a7_sprit, "SPRIT")
+                aura.Add(a7_overlord, "OVERLORD")
+                aura.Add(a7_fly, "FLY")
+                cmbAura7.DisplayMember = "Key"
+                cmbAura7.ValueMember = "Value"
+                cmbAura7.DataSource = New BindingSource(aura, Nothing)
+            End If
+
+            lblAvatarOffset.Visible = My.Settings.DebugMode
+            lblc4c5.Visible = My.Settings.DebugMode
+            lblc5c6.Visible = My.Settings.DebugMode
+            lblc7c8.Visible = My.Settings.DebugMode
+            lblc8c9.Visible = My.Settings.DebugMode
+            lblcacb.Visible = My.Settings.DebugMode
+            lblcbcc.Visible = My.Settings.DebugMode
+            lblcdce.Visible = My.Settings.DebugMode
+            lbl221.Visible = My.Settings.DebugMode
+
+            datafilled = True
+        Catch ex As Exception
+            MsgBox(ex.Message & ex.StackTrace, MsgBoxStyle.Critical, "Error")
+        End Try
+    End Sub
+
+
     Private Sub AfterCardLoaded()
-        'Add Gender
-        sex.Add(male, "MALE")
-        sex.Add(female, "FEMALE")
-        cmbGender.DisplayMember = "Key"
-        cmbGender.ValueMember = "Value"
-        cmbGender.DataSource = New BindingSource(sex, Nothing)
-        If _extension = "bin" Then
-            If GetGender(GetHex(_filename, 90, 1)) = Gender.female Then
-                cmbGender.SelectedIndex = 1
-            Else
-                cmbGender.SelectedIndex = 0
-            End If
-        Else
-            If GetGender(GetHex(_filename, Neg60(90), 1)) = Gender.female Then
-                cmbGender.SelectedIndex = 1
-            Else
-                cmbGender.SelectedIndex = 0
-            End If
-        End If
-
-        If _version = 6 Then
-            DictionaryAdd6()
-        End If
-
-        If _version = 7 Then
-            DictionaryAdd7()
-
-            'Add Aura
-            aura.Add(a7_none, "NONE")
-            aura.Add(a7_hot, "HOT")
-            aura.Add(a7_wind, "WIND")
-            aura.Add(a7_light, "LIGHT")
-            aura.Add(a7_sprit, "SPRIT")
-            aura.Add(a7_overlord, "OVERLORD")
-            aura.Add(a7_fly, "FLY")
-            cmbAura7.DisplayMember = "Key"
-            cmbAura7.ValueMember = "Value"
-            cmbAura7.DataSource = New BindingSource(aura, Nothing)
-        End If
-
-        lblAvatarOffset.Visible = My.Settings.DebugMode
-        lblc4c5.Visible = My.Settings.DebugMode
-        lblc5c6.Visible = My.Settings.DebugMode
-        lblc7c8.Visible = My.Settings.DebugMode
-        lblc8c9.Visible = My.Settings.DebugMode
-        lblcacb.Visible = My.Settings.DebugMode
-        lblcbcc.Visible = My.Settings.DebugMode
-        lblcdce.Visible = My.Settings.DebugMode
-        lbl221.Visible = My.Settings.DebugMode
-
         Try
             If _extension = "bin" Then
                 txtName.Text = GetName(GetHex(_filename, 240, 12))
@@ -3130,12 +3129,14 @@ Public Class frmEdit
                     txtPridePoint.Text = GetPridePoint(GetHex(_filename, 173, 1), GetHex(_filename, 174, 1))
                     txtMileage.Text = GetMilelage(GetHex(_filename, 1096, 1), GetHex(_filename, 1097, 1), GetHex(_filename, 1098, 1), GetHex(_filename, 1099, 1))
                     GroupBox3.Enabled = False
+                    GroupBox2.Enabled = True
                     cmbCar1.Text = GetCar(GetHex(_filename, 256, 2), GetHex(_filename, 271, 1), 6)
                     cmbCar2.Text = GetCar(GetHex(_filename, 352, 2), GetHex(_filename, 367, 1), 6)
                     cmbCar3.Text = GetCar(GetHex(_filename, 448, 2), GetHex(_filename, 463, 1), 6)
                 Else
                     txtLevel.Text = GetLevel(GetHex(_filename, 163, 1), True)
                     GroupBox2.Enabled = False
+                    GroupBox3.Enabled = True
                     txtSPride.Text = GetPridePoint(GetHex(_filename, 170, 1), GetHex(_filename, 171, 1))
                     txtTPride.Text = GetPridePoint(GetHex(_filename, 172, 1), GetHex(_filename, 173, 1))
                     txtMileage.Text = GetMilelage(GetHex(_filename, 896, 1), GetHex(_filename, 897, 1), GetHex(_filename, 898, 1), GetHex(_filename, 899, 1))
@@ -3217,12 +3218,14 @@ Public Class frmEdit
                     txtPridePoint.Text = GetPridePoint(GetHex(_filename, Neg60(173), 1), GetHex(_filename, Neg60(174), 1))
                     txtMileage.Text = GetMilelage(GetHex(_filename, Neg60(1096), 1), GetHex(_filename, Neg60(1097), 1), GetHex(_filename, Neg60(1098), 1), GetHex(_filename, Neg60(1099), 1))
                     GroupBox3.Enabled = False
+                    GroupBox2.Enabled = True
                     cmbCar1.Text = GetCar(GetHex(_filename, Neg60(256), 2), GetHex(_filename, Neg60(271), 1), 6)
                     cmbCar2.Text = GetCar(GetHex(_filename, Neg60(352), 2), GetHex(_filename, Neg60(367), 1), 6)
                     cmbCar3.Text = GetCar(GetHex(_filename, Neg60(448), 2), GetHex(_filename, Neg60(463), 1), 6)
                 Else
                     txtLevel.Text = GetLevel(GetHex(_filename, Neg60(163), 1), True)
                     GroupBox2.Enabled = False
+                    GroupBox3.Enabled = True
                     txtSPride.Text = GetPridePoint(GetHex(_filename, Neg60(170), 1), GetHex(_filename, Neg60(171), 1))
                     txtTPride.Text = GetPridePoint(GetHex(_filename, Neg60(172), 1), GetHex(_filename, Neg60(173), 1))
                     txtMileage.Text = GetMilelage(GetHex(_filename, Neg60(896), 1), GetHex(_filename, Neg60(897), 1), GetHex(_filename, Neg60(898), 1), GetHex(_filename, Neg60(899), 1))
@@ -3315,15 +3318,15 @@ Public Class frmEdit
     Private Sub CheckUpdate()
         Try
             If curVer <> CheckForUpdate() Then
-                Dim result As Integer = MessageBox.Show(new_version, "Initial D Launcher", MessageBoxButtons.YesNo)
+                Dim result As Integer = MessageBox.Show(new_version, "Initial D Card Editor", MessageBoxButtons.YesNo)
                 If result = DialogResult.No Then
                     Exit Sub
                 ElseIf result = DialogResult.Yes Then
-                    If IsURLValid("https://www.imnotmental.com/tool/initial-d-arcade-stage-launcher-teknoparrot/") Then
-                        Process.Start("https://www.imnotmental.com/tool/initial-d-arcade-stage-launcher-teknoparrot/")
+                    If IsURLValid("https://www.imnotmental.com/tool/initial-d-arcade-stage-standalone-card-editor/") Then
+                        Process.Start("https://www.imnotmental.com/tool/initial-d-arcade-stage-standalone-card-editor/")
                         End
                     Else
-                        Process.Start("https://www.patreon.com/posts/initial-d-arcade-15177342")
+                        Process.Start("https://www.patreon.com/posts/initiald-arcade-18074214")
                         End
                     End If
                 End If

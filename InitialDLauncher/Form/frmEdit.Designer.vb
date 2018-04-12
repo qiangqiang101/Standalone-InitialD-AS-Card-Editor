@@ -25,10 +25,26 @@ Partial Class frmEdit
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmEdit))
         Me.lblAvatarOffset = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.NsTheme1 = New CardEditor.NSTheme()
-        Me.btnTool = New CardEditor.NSButton()
-        Me.btnHelp = New CardEditor.NSButton()
-        Me.btnFile = New CardEditor.NSButton()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmFile = New CardEditor.NSContextMenu()
+        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmTool = New CardEditor.NSContextMenu()
+        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Fix5108ErrorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmHelp = New CardEditor.NSContextMenu()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MyDiscordServerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.gbEditor = New CardEditor.NSGroupBox()
         Me.GroupBox4 = New CardEditor.NSGroupBox()
         Me.gbFrame = New CardEditor.NSGroupBox()
@@ -115,22 +131,11 @@ Partial Class frmEdit
         Me.txtName = New CardEditor.NSTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.NsControlButton1 = New CardEditor.NSControlButton()
-        Me.cmHelp = New CardEditor.NSContextMenu()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MyDiscordServerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmFile = New CardEditor.NSContextMenu()
-        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.cmTool = New CardEditor.NSContextMenu()
-        Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Fix5108ErrorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.NsTheme1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
+        Me.cmFile.SuspendLayout()
+        Me.cmTool.SuspendLayout()
+        Me.cmHelp.SuspendLayout()
         Me.gbEditor.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.gbFrame.SuspendLayout()
@@ -155,9 +160,6 @@ Partial Class frmEdit
         Me.NsGroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        Me.cmHelp.SuspendLayout()
-        Me.cmFile.SuspendLayout()
-        Me.cmTool.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblAvatarOffset
@@ -173,15 +175,17 @@ Partial Class frmEdit
         Me.lblAvatarOffset.Text = "0000000000000000000000"
         Me.lblAvatarOffset.Visible = False
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
         'NsTheme1
         '
         Me.NsTheme1.AccentOffset = 42
         Me.NsTheme1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.NsTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.NsTheme1.Colors = New CardEditor.Bloom(-1) {}
-        Me.NsTheme1.Controls.Add(Me.btnTool)
-        Me.NsTheme1.Controls.Add(Me.btnHelp)
-        Me.NsTheme1.Controls.Add(Me.btnFile)
+        Me.NsTheme1.Controls.Add(Me.MenuStrip1)
         Me.NsTheme1.Controls.Add(Me.gbEditor)
         Me.NsTheme1.Controls.Add(Me.NsControlButton1)
         Me.NsTheme1.Customization = ""
@@ -202,29 +206,127 @@ Partial Class frmEdit
         Me.NsTheme1.TransparencyKey = System.Drawing.Color.Empty
         Me.NsTheme1.Transparent = False
         '
-        'btnTool
+        'MenuStrip1
         '
-        Me.btnTool.Location = New System.Drawing.Point(69, 36)
-        Me.btnTool.Name = "btnTool"
-        Me.btnTool.Size = New System.Drawing.Size(51, 24)
-        Me.btnTool.TabIndex = 64
-        Me.btnTool.Text = "Tools"
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(3, 33)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(945, 24)
+        Me.MenuStrip1.TabIndex = 59
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'btnHelp
+        'FileToolStripMenuItem
         '
-        Me.btnHelp.Location = New System.Drawing.Point(126, 36)
-        Me.btnHelp.Name = "btnHelp"
-        Me.btnHelp.Size = New System.Drawing.Size(51, 24)
-        Me.btnHelp.TabIndex = 63
-        Me.btnHelp.Text = "Help"
+        Me.FileToolStripMenuItem.DropDown = Me.cmFile
+        Me.FileToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
         '
-        'btnFile
+        'cmFile
         '
-        Me.btnFile.Location = New System.Drawing.Point(12, 36)
-        Me.btnFile.Name = "btnFile"
-        Me.btnFile.Size = New System.Drawing.Size(51, 24)
-        Me.btnFile.TabIndex = 62
-        Me.btnFile.Text = "File"
+        Me.cmFile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.cmFile.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.SaveToolStripMenuItem, Me.ToolStripSeparator1, Me.ExitToolStripMenuItem})
+        Me.cmFile.Name = "NsContextMenu1"
+        Me.cmFile.Size = New System.Drawing.Size(104, 76)
+        '
+        'OpenToolStripMenuItem
+        '
+        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.OpenToolStripMenuItem.Text = "Open"
+        '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Enabled = False
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.SaveToolStripMenuItem.Text = "Save"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(100, 6)
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'ToolsToolStripMenuItem
+        '
+        Me.ToolsToolStripMenuItem.DropDown = Me.cmTool
+        Me.ToolsToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ToolsToolStripMenuItem.Text = "Tools"
+        '
+        'cmTool
+        '
+        Me.cmTool.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.cmTool.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.Fix5108ErrorToolStripMenuItem})
+        Me.cmTool.Name = "cmHelp"
+        Me.cmTool.OwnerItem = Me.ToolsToolStripMenuItem
+        Me.cmTool.Size = New System.Drawing.Size(144, 48)
+        '
+        'SettingsToolStripMenuItem
+        '
+        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.SettingsToolStripMenuItem.Text = "Settings"
+        '
+        'Fix5108ErrorToolStripMenuItem
+        '
+        Me.Fix5108ErrorToolStripMenuItem.Enabled = False
+        Me.Fix5108ErrorToolStripMenuItem.Name = "Fix5108ErrorToolStripMenuItem"
+        Me.Fix5108ErrorToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.Fix5108ErrorToolStripMenuItem.Text = "Fix 5108 Error"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDown = Me.cmHelp
+        Me.HelpToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "Help"
+        '
+        'cmHelp
+        '
+        Me.cmHelp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.cmHelp.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.MyDiscordServerToolStripMenuItem, Me.ToolStripSeparator2, Me.ImNotMentaLOfficialWebsiteToolStripMenuItem, Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem})
+        Me.cmHelp.Name = "cmHelp"
+        Me.cmHelp.Size = New System.Drawing.Size(277, 98)
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'MyDiscordServerToolStripMenuItem
+        '
+        Me.MyDiscordServerToolStripMenuItem.Name = "MyDiscordServerToolStripMenuItem"
+        Me.MyDiscordServerToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
+        Me.MyDiscordServerToolStripMenuItem.Text = "My Discord Server"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(273, 6)
+        '
+        'ImNotMentaLOfficialWebsiteToolStripMenuItem
+        '
+        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem.Name = "ImNotMentaLOfficialWebsiteToolStripMenuItem"
+        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
+        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem.Text = "I'm Not MentaL Website"
+        '
+        'ZettabyteTechnologyOfficialWebsiteToolStripMenuItem
+        '
+        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem.Name = "ZettabyteTechnologyOfficialWebsiteToolStripMenuItem"
+        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
+        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem.Text = "Zettabyte Technology Official Website"
         '
         'gbEditor
         '
@@ -1283,97 +1385,6 @@ Partial Class frmEdit
         Me.NsControlButton1.TabIndex = 55
         Me.NsControlButton1.Text = "NsControlButton1"
         '
-        'cmHelp
-        '
-        Me.cmHelp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.cmHelp.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.MyDiscordServerToolStripMenuItem, Me.ToolStripSeparator2, Me.ImNotMentaLOfficialWebsiteToolStripMenuItem, Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem})
-        Me.cmHelp.Name = "cmHelp"
-        Me.cmHelp.Size = New System.Drawing.Size(277, 98)
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
-        Me.AboutToolStripMenuItem.Text = "About"
-        '
-        'MyDiscordServerToolStripMenuItem
-        '
-        Me.MyDiscordServerToolStripMenuItem.Name = "MyDiscordServerToolStripMenuItem"
-        Me.MyDiscordServerToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
-        Me.MyDiscordServerToolStripMenuItem.Text = "My Discord Server"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(273, 6)
-        '
-        'ImNotMentaLOfficialWebsiteToolStripMenuItem
-        '
-        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem.Name = "ImNotMentaLOfficialWebsiteToolStripMenuItem"
-        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
-        Me.ImNotMentaLOfficialWebsiteToolStripMenuItem.Text = "I'm Not MentaL Website"
-        '
-        'ZettabyteTechnologyOfficialWebsiteToolStripMenuItem
-        '
-        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem.Name = "ZettabyteTechnologyOfficialWebsiteToolStripMenuItem"
-        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem.Size = New System.Drawing.Size(276, 22)
-        Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem.Text = "Zettabyte Technology Official Website"
-        '
-        'cmFile
-        '
-        Me.cmFile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.cmFile.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.SaveToolStripMenuItem, Me.ToolStripSeparator1, Me.ExitToolStripMenuItem})
-        Me.cmFile.Name = "NsContextMenu1"
-        Me.cmFile.Size = New System.Drawing.Size(104, 76)
-        '
-        'OpenToolStripMenuItem
-        '
-        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
-        Me.OpenToolStripMenuItem.Text = "Open"
-        '
-        'SaveToolStripMenuItem
-        '
-        Me.SaveToolStripMenuItem.Enabled = False
-        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
-        Me.SaveToolStripMenuItem.Text = "Save"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(100, 6)
-        '
-        'ExitToolStripMenuItem
-        '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
-        Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'cmTool
-        '
-        Me.cmTool.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.cmTool.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SettingsToolStripMenuItem, Me.Fix5108ErrorToolStripMenuItem})
-        Me.cmTool.Name = "cmHelp"
-        Me.cmTool.Size = New System.Drawing.Size(144, 48)
-        '
-        'SettingsToolStripMenuItem
-        '
-        Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.SettingsToolStripMenuItem.Text = "Settings"
-        '
-        'Fix5108ErrorToolStripMenuItem
-        '
-        Me.Fix5108ErrorToolStripMenuItem.Enabled = False
-        Me.Fix5108ErrorToolStripMenuItem.Name = "Fix5108ErrorToolStripMenuItem"
-        Me.Fix5108ErrorToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.Fix5108ErrorToolStripMenuItem.Text = "Fix 5108 Error"
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        '
         'frmEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1384,12 +1395,19 @@ Partial Class frmEdit
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmEdit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Card"
         Me.NsTheme1.ResumeLayout(False)
+        Me.NsTheme1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.cmFile.ResumeLayout(False)
+        Me.cmTool.ResumeLayout(False)
+        Me.cmHelp.ResumeLayout(False)
         Me.gbEditor.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
@@ -1427,9 +1445,6 @@ Partial Class frmEdit
         Me.GroupBox2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        Me.cmHelp.ResumeLayout(False)
-        Me.cmFile.ResumeLayout(False)
-        Me.cmTool.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1522,22 +1537,23 @@ Partial Class frmEdit
     Friend WithEvents Label19 As Label
     Friend WithEvents txtLegend As NSTextBox
     Friend WithEvents cmFile As NSContextMenu
-    Friend WithEvents btnFile As NSButton
     Friend WithEvents gbEditor As NSGroupBox
-    Friend WithEvents btnHelp As NSButton
     Friend WithEvents cmHelp As NSContextMenu
-    Friend WithEvents OpenToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MyDiscordServerToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ImNotMentaLOfficialWebsiteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ZettabyteTechnologyOfficialWebsiteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents btnTool As NSButton
     Friend WithEvents cmTool As NSContextMenu
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Fix5108ErrorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class
