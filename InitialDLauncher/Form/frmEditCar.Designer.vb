@@ -48,6 +48,7 @@ Partial Class frmEditCar
         Me.Label4 = New System.Windows.Forms.Label()
         Me.NsControlButton1 = New CardEditor.NSControlButton()
         Me.NsGroupBox1 = New CardEditor.NSGroupBox()
+        Me.cbEngineRollbar = New CardEditor.NSCheckBox()
         Me.cmbRollbar = New CardEditor.NSComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmbEngine = New CardEditor.NSComboBox()
@@ -371,6 +372,7 @@ Partial Class frmEditCar
         '
         'NsGroupBox1
         '
+        Me.NsGroupBox1.Controls.Add(Me.cbEngineRollbar)
         Me.NsGroupBox1.Controls.Add(Me.cmbRollbar)
         Me.NsGroupBox1.Controls.Add(Me.Label2)
         Me.NsGroupBox1.Controls.Add(Me.cmbEngine)
@@ -385,6 +387,16 @@ Partial Class frmEditCar
         Me.NsGroupBox1.TabIndex = 53
         Me.NsGroupBox1.Text = "NsGroupBox1"
         Me.NsGroupBox1.Title = "Performance Parts"
+        '
+        'cbEngineRollbar
+        '
+        Me.cbEngineRollbar.Checked = False
+        Me.cbEngineRollbar.Enabled = False
+        Me.cbEngineRollbar.Location = New System.Drawing.Point(173, 36)
+        Me.cbEngineRollbar.Name = "cbEngineRollbar"
+        Me.cbEngineRollbar.Size = New System.Drawing.Size(161, 24)
+        Me.cbEngineRollbar.TabIndex = 54
+        Me.cbEngineRollbar.Text = "Save Performance Parts"
         '
         'cmbRollbar
         '
@@ -531,4 +543,5 @@ Partial Class frmEditCar
     Friend WithEvents Label12 As Label
     Friend WithEvents btnLoad As NSButton
     Friend WithEvents btnSave As NSButton
+    Friend WithEvents cbEngineRollbar As NSCheckBox
 End Class

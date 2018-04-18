@@ -161,6 +161,7 @@ Public Class frmEditCar
                 NsTheme1.Text = Me.Text
                 Label3.Text = "Replace to"
                 cbFullSpec.Text = "Unlock FullSpec"
+                cbEngineRollbar.Text = "Save Engine & Rollbar"
                 NsGroupBox1.Title = "Performance Parts"
                 NsGroupBox1.SubTitle = "Edit this might overwrite your Visual Parts."
                 Label1.Text = "Select Engine"
@@ -187,6 +188,7 @@ Public Class frmEditCar
                 NsTheme1.Text = Me.Text
                 Label3.Text = "换成"
                 cbFullSpec.Text = "解鎖 FullSpec"
+                cbEngineRollbar.Text = "保存引擎以及滾動條"
                 NsGroupBox1.Title = "性能零件"
                 NsGroupBox1.SubTitle = "修改這個可能會導致外改裝件消失噢。"
                 Label1.Text = "選擇引擎"
@@ -213,6 +215,7 @@ Public Class frmEditCar
                 NsTheme1.Text = Me.Text
                 Label3.Text = "Replace to"
                 cbFullSpec.Text = "déverrouiller les FullSpec"
+                cbEngineRollbar.Text = "Save Engine & Rollbar"
                 NsGroupBox1.Title = "Performance Parts"
                 NsGroupBox1.SubTitle = "Edit this might overwrite your Visual Parts."
                 Label1.Text = "Select Engine"
@@ -421,6 +424,7 @@ Public Class frmEditCar
             tCar.FullSpec = cbFullSpec.Checked
             tCar.Engine = cmbEngine.SelectedValue.ToString
             tCar.Rollbar = cmbRollbar.SelectedValue.ToString
+            tCar.SaveEngineRollbar = cbEngineRollbar.Checked
             tCar.Param = parameter
             tCar.Edited = True
 
@@ -649,6 +653,10 @@ Public Class frmEditCar
     End Sub
 
     Private Sub cbFullSpec_CheckedChanged(sender As Object) Handles cbFullSpec.CheckedChanged
+        cbEngineRollbar.Enabled = cbFullSpec.Checked
+    End Sub
+
+    Private Sub cbEngineRollbar_CheckedChanged(sender As Object) Handles cbEngineRollbar.CheckedChanged
         cmbEngine.Enabled = cbFullSpec.Checked
         cmbRollbar.Enabled = cbFullSpec.Checked
         Label1.Enabled = cbFullSpec.Checked

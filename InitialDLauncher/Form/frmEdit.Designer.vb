@@ -229,6 +229,7 @@ Partial Class frmEdit
         Me.cmFile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.cmFile.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.SaveToolStripMenuItem, Me.ToolStripSeparator1, Me.ExitToolStripMenuItem})
         Me.cmFile.Name = "NsContextMenu1"
+        Me.cmFile.OwnerItem = Me.FileToolStripMenuItem
         Me.cmFile.Size = New System.Drawing.Size(104, 76)
         '
         'OpenToolStripMenuItem
@@ -297,6 +298,7 @@ Partial Class frmEdit
         Me.cmHelp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
         Me.cmHelp.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.MyDiscordServerToolStripMenuItem, Me.ToolStripSeparator2, Me.ImNotMentaLOfficialWebsiteToolStripMenuItem, Me.ZettabyteTechnologyOfficialWebsiteToolStripMenuItem})
         Me.cmHelp.Name = "cmHelp"
+        Me.cmHelp.OwnerItem = Me.HelpToolStripMenuItem
         Me.cmHelp.Size = New System.Drawing.Size(277, 98)
         '
         'AboutToolStripMenuItem
